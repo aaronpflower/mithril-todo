@@ -1,0 +1,98 @@
+@require './base/variables.styl'
+
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-color: $colorWhite
+    text-align: center
+    width 100vw
+    height 100vh
+
+.todoList
+    display: flex
+    flex-direction: column
+    max-width 500px
+    width 100%
+
+.button
+    margin: 5px 0px
+    height: 4em
+    color: $colorWhite
+    font-size: 1em
+    text-align center
+    background-color $colorPrimary
+    border none
+    border-radius($borderRadiusSm)
+    cursor pointer
+    line-height 1.15
+    max-width 100%
+    transition box-shadow .1s ease-in-out
+    box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowSm $colorDarkTrans10
+    &:hover
+        box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowMd $colorDarkTrans20
+    &:focus,
+    &:active
+        box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowNone $colorDarkTrans10
+
+.input
+    height: 4em
+    padding .5em
+    color $colorDark
+    border 1px solid $colorDarkTrans50
+    box-shadow $boxShadowNone $stroke $colorDarkTrans10
+    &:active,
+    &:focus
+        border-color $colorPrimary
+        outline none
+        box-shadow $boxShadowNone $stroke $colorPrimary,
+        $boxShadowMd $colorDarkTrans20
+
+.listItem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 5px
+    text-align: left
+    border 1px solid $colorDarkTrans50
+    margin: 5px 0px
+
+.label
+    color $colorDark
+
+.checkboxInput
+	border: 0
+	clip: rect(0 0 0 0)
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	width: 1px
+
+.checkboxValue
+	background-color: $colorWhite
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 95% auto
+	border: 0.0625em solid $colorDarkTrans50
+	border-radius: 50%
+	box-shadow: inset 0 0.0625em 0 0.0625em rgba(0,0,0,0.075)
+	display: inline-block
+	height: 1.5em
+	margin-right: 0.25em
+	position: relative
+	vertical-align: -0.5em
+	width: 1.5em
+	position: relative
+
+.checkboxInput
+	&:checked
+		& + .checkboxValue
+			background-color: $colorPrimary
+			background-image: url("data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.11523949%2C15.4705622%20C7.41484655%2C15.7629626%207.8931708%2C15.7701576%208.19921005%2C15.4714005%20L17.1002832%2C6.78212642%20C17.5971831%2C6.29705019%2017.6210333%2C5.50006733%2017.1483918%2C4.99651532%20L17.0646556%2C4.90730289%20C16.5943254%2C4.40621334%2015.8120276%2C4.39178459%2015.3139757%2C4.87836662%20L8.19582106%2C11.8325947%20C7.90036047%2C12.121251%207.41849771%2C12.1187379%207.12216018%2C11.8295283%20L4.68524782%2C9.45123261%20C4.18899648%2C8.96691793%203.40779105%2C8.97810538%202.93521492%2C9.48172125%20L2.85149037%2C9.57094499%20C2.38122523%2C10.0720981%202.40688971%2C10.8754654%202.89648351%2C11.3532827%20L7.11523949%2C15.4705622%20Z%22%2F%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E")
+
+.close
+    height: 25px
+    width: 25px
+    cursor: pointer
