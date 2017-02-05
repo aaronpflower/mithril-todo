@@ -3,13 +3,6 @@ vendor(prop, args)
   -moz-{prop} args
   {prop} args
 
-$borderRadiusSm = 3px
-$borderRadiusMd = 6px
-$borderRadiusLg = 12px
-
-border-radius()
-  vendor('border-radius', arguments)
-
 $boxShadowNone = 0 0 0
 $boxShadowSm =   0 .05em .1em
 $boxShadowMd =   0 .2em .5em
@@ -17,31 +10,7 @@ $boxShadowMd =   0 .2em .5em
 box-shadow()
   vendor('box-shadow', arguments)
 
-// Colors
-// ========================================
-
 $colorPrimary =       #35C5F2
-$colorPrimaryDark =   #1E90FF
-$colorPrimaryLight =  #DBF3FF
 $colorDark =          #1A1F52
-$colorLight =         #F3E5E1
 $colorWhite =         #FFFFFF
-$colorWarning =       #ff3300
-$colorDarkTrans3 =    alpha($colorDark, 0.03)
-$colorDarkTrans10 =   alpha($colorDark, 0.1)
-$colorDarkTrans20 =   alpha($colorDark, 0.2)
 $colorDarkTrans50 =   alpha($colorDark, 0.5)
-$colorCatHousing =    #FDB913 // yellow
-$colorCatMedical =    #F04937 // red
-$colorCatEducation =  #29C7B0 // green
-$colorCatDelivery =   #9B7ADB // purple
-
-$colorText =          #333
-$colorLightGray =     #C6C8D2
-
-// Media Queries, same break points as flexbox grid
-// ========================================
-
-$screen-sm = '(min-width:'+ 48 + 'rem)'
-$screen-md = '(min-width:' + 64 + 'rem)'
-$screen-lg = '(min-width:' + 75 + 'rem)'
