@@ -6,13 +6,14 @@ module.exports = {
     oninit({attrs}) {
         const { store } = attrs
         this.btnText = 'Create Todo'
+        this.newTodo = ''
         this.setValue = (v) => {
 			this.newTodo = v
 		}
         this.todoList = []
 
         this.createTodo = () => {
-            if (typeof this.newTodo !== 'undefined') {
+            if (this.newTodo !== '') {
                 store.dispatch(actions.addTodo(this.newTodo))
                 this.newTodo = ''
             } else {
@@ -38,8 +39,7 @@ module.exports = {
     view({ attrs }) {
         const { store } = attrs
         const state = store.getState()
-        let list
-
+        
         if (state.filteredList === null) {
             list = state.todoList
             this.btnText = 'Nothing to filter'

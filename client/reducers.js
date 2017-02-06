@@ -18,13 +18,13 @@ module.exports = createReducer(initialState, {
 	[ADD_TODO]: (state, action) => {
 		return { 
 			...state,
-			todoList: [ ...state.todoList, { id: action.id, data: action.data, completed: action.completed }],
+			todoList: [ ...state.todoList, { data: action.data, completed: action.completed }],
 			todosLeft: state.todosLeft + 1
 		}
 	},
 	[REMOVE_TODO]: (state, action) => {
 		let a = state.todoList
-		let b = a.splice(action.data.id, 1)
+		let b = a.splice(action.data, 1)
 		return {
 			...state,
 			todoList: a,
@@ -41,7 +41,7 @@ module.exports = createReducer(initialState, {
             completed = false
 			count = state.todosLeft + 1
         }
-		state.todoList[action.data.id].completed = completed
+		action.data.completed = completed
 		return { 
 			...state,
 			todoList: state.todoList,
