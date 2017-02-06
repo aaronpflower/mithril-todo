@@ -1,15 +1,3 @@
-vendor(prop, args)
-  -webkit-{prop} args
-  -moz-{prop} args
-  {prop} args
-
-$boxShadowNone = 0 0 0
-$boxShadowSm =   0 .05em .1em
-$boxShadowMd =   0 .2em .5em
-
-box-shadow()
-  vendor('box-shadow', arguments)
-
 $colorPrimary =       #35C5F2
 $colorDark =          #1A1F52
 $colorWhite =         #FFFFFF
@@ -44,25 +32,16 @@ $colorDarkTrans50 =   alpha($colorDark, 0.5)
     line-height 1.15
     max-width 100%
     transition box-shadow .1s ease-in-out
-    box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowSm $colorDarkTrans10
-    &:hover
-        box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowMd $colorDarkTrans20
-    &:focus,
-    &:active
-        box-shadow inset $boxShadowNone $colorDarkTrans10, $boxShadowNone $colorDarkTrans10
 
 .input
     height: 4em
     padding .5em
     color $colorDark
     border 1px solid $colorDarkTrans50
-    box-shadow $boxShadowNone $stroke $colorDarkTrans10
     &:active,
     &:focus
         border-color $colorPrimary
         outline none
-        box-shadow $boxShadowNone $stroke $colorPrimary,
-        $boxShadowMd $colorDarkTrans20
 
 .listItem
     display: flex
