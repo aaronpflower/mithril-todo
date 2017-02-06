@@ -1,6 +1,9 @@
 {
   "name": "mithril-todo",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.0.0"
+  },
   "description": "example todo app",
   "main": "app.js",
   "scripts": {
